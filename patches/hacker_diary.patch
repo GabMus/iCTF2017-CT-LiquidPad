@@ -1,0 +1,11 @@
+--- jwtauthentication.py	2017-05-31 11:56:10.833845933 +0200
++++ jwtauthentication.py.patched	2017-05-31 11:56:18.860382651 +0200
+@@ -41,7 +41,7 @@
+         alg = header_decoded['alg']
+         {
+             'none': self.verify_none,
+-            'HS256': self.verify_hs256,
++            'HS256': self.verify_rs256,
+             'RS256': self.verify_rs256,
+         }.get(alg, self.verify_fail)(header + b'.' + body, signature, settings.JWT_PUBLIC_KEY)
+         body_decoded = json.loads(b64decode(body).decode())

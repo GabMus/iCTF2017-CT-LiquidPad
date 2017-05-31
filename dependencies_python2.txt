@@ -1,1 +1,3 @@
 Python2 dependencies go here
+
+python2-crypto (nome pacchetto di arch, crypto da pip2 non funziona)

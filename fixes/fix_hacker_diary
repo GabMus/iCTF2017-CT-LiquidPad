@@ -1,0 +1,7 @@
+#!/bin/bash
+
+HOST=$1
+
+scp ./patches/hacker_diary.patch root@${HOST}:/opt/ctf/hacker_diary/ro/diary/
+
+ssh -l root ${HOST} "cd /opt/ctf/hacker_diary/ro/diary/; patch < hacker_diary.patch"
