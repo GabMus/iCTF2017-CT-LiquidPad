@@ -9,8 +9,6 @@ Semu i megghiu
 | sharing | 20065 | Flags are identified by the sharing key | Python / DB | ❌ | ❌ |
 | Bl4ckG0ld | 20066 | Flags are identified by the RecipeNo. | bin | ❌ | ❌ |
 | nadmozg | 20067 | private dictionary name | C/bin | ✅ | ❌ |
-| text_file_store | 20093 | Username used in identifing the file | PHP | ❌ | ❌ |
-| FHM-Maintenance | 20111 | Flags are identified by the username. | / | ❌ | ❌ |
-| tweety_bird | 20118 | Flags are identified by the twit_id. | bin | ❌ | ❌ |
+| FHM-Maintenance | 20111 | Flags are identified by the username. | / | ✅ | ❌ |
 | ropeman | 20129 | Flags are identified by the note name.The flags are the status field in a txt file for a registered user | bin | ✅ | ❌ |
 | hacker_diary | 20130 | A flag_id is an entry id which corresponds to a detailed, prehashed description of an exploit. http: //<hostname>: <port>/entries/<flag_id> should yield an entry with the flag | Python/Django | ✅ | ✅ |
