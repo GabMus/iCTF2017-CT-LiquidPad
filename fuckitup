@@ -1,23 +1,31 @@
 #!/bin/bash
 
 if [ ! $1 ]; then
-    echo 'Usage: ./fuckitup SERVER_ADDRESS'
-    exit 1;
+    echo 'Usage: ./fuckitup SERVER_ADDRESS [SLEEP_TIMER]'
+    exit 1
+fi
+
+sleeptimer=10
+
+if [ $2 ]; then
+	sleeptimer=$2
 fi
 
 echo 'ROLLIN'
-PS1="shell$ "
+export PS1="shell$ "
 SESSION=$USER
 tmux -2 new-session -d -s $SESSION
 index=0
 
+touch /tmp/fuckituplock
 for runnable in $(find ./exploits/*); do
     tmux split-window -h
     tmux select-pane -t $index
-	tmux send-keys "while [[ $(cat /tmp/fuckituplock)==0 ]]; do $runnable $1; done" C-m
+	tmux send-keys "while [ -f /tmp/fuckituplock ]; do $runnable $1; sleep $sleeptimer; done; exit" C-m
     # $runnable &
     index=$((index+1))
 done
 
 tmux select-layout even-horizontal
 tmux -2 attach-session -t $SESSION
+echo 'ATTACK INTERRUPTED'
