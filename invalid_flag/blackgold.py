@@ -3,6 +3,10 @@ from pwn import *
 from random import randint
 import sys
 
+sys.path.append('../utilities/')
+from utils import sendFlag
+from utils import getFlagID
+
 def genRndString():
     rang = randint(8,16)
     rndString = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(rang))
@@ -24,4 +28,8 @@ def invalidFlag(ip, port, flag_id):
     return {"flag_id": flag_id, "token": password}
 
 if name == '__main__':
-    print invalidFlag(sys.argv[1], 20066, sys.argv[2])
+	if len(sys.argv) < 2:
+        print("Usage: %s <ip>" % os.path.basename(__file__))
+        sys.exit(1)
+    else:
+        print invalidFlag(sys.argv[1], 20066, getFlagID("blackgold"))
