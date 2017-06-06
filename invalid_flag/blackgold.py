@@ -1,9 +1,10 @@
+#!/usr/bin/env python2 
 import re, string, sys
 from pwn import *
 from random import randint
 import sys
 
-sys.path.append('../utilities/')
+sys.path.append('./utilities/')
 from utils import sendFlag
 from utils import getFlagID
 
@@ -15,7 +16,7 @@ def genRndString():
 def invalidFlag(ip, port, flag_id):
     flag_rnd = genRndString()
     password = genRndString()
-    c = remote(host,port)
+    c = remote(ip,port)
     for count in range(0,4):
             c.recvline()
     c.sendline("A")
@@ -27,8 +28,8 @@ def invalidFlag(ip, port, flag_id):
     c.close()
     return {"flag_id": flag_id, "token": password}
 
-if name == '__main__':
-	if len(sys.argv) < 2:
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
         print("Usage: %s <ip>" % os.path.basename(__file__))
         sys.exit(1)
     else:

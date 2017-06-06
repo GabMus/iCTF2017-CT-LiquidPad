@@ -14,7 +14,7 @@ index=0
 for runnable in $(find ./exploits/*); do
     tmux split-window -h
     tmux select-pane -t $index
-    tmux send-keys "$runnable &" C-m
+	tmux send-keys "while [[ $(cat /tmp/fuckituplock)==0 ]]; do $runnable $1; done" C-m
     # $runnable &
     index=$((index+1))
 done

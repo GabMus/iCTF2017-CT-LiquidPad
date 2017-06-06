@@ -1,6 +1,6 @@
 import requests, sys
 
-IP_ARBITRO = "127.0.0.1"
+IP_ARBITRO = "10.0.0.103" #"127.0.0.1"
 PORT_ARBITRO = "5000"
 ENEMY_NAME = "CuredPin"
 FRIEND_NAME = "LiquidPad"
