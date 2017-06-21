@@ -1,0 +1,27 @@
+#include <command.h>
+
+extern command create_command;
+extern command delete_command;
+extern command exit_command;
+extern command help_command;
+extern command login_command;
+extern command messages_command;
+extern command new_command;
+extern command read_command;
+extern command send_command;
+extern command users_command;
+
+#define CMD_LENGTH 10
+
+const command *cmd_list[] = {
+	&create_command,
+	&delete_command,
+	&exit_command,
+	&help_command,
+	&login_command,
+	&messages_command,
+	&new_command,
+	&read_command,
+	&send_command,
+	&users_command
+};

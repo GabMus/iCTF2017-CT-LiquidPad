@@ -1,0 +1,11 @@
+# Last Modified: Sun Jun  4 06:25:52 2017
+#include <tunables/global>
+
+/opt/ctf/FHM-Maintenance/ro/FHM-Maintenance {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  /opt/ctf/FHM-Maintenance/ro/FHM-Maintenance mr,
+  /opt/ctf/FHM-Maintenance/rw/doc_root/htpass/* rw,
+
+}

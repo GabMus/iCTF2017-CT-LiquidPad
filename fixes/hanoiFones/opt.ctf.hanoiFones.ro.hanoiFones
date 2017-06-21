@@ -1,0 +1,11 @@
+# Last Modified: Tue Jun  6 14:28:18 2017
+#include <tunables/global>
+
+/opt/ctf/hanoiFones/ro/hanoiFones flags=(complain) {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  /opt/ctf/hanoiFones/ro/hanoiFones mr,
+  /opt/ctf/hanoiFones/rw/* rw,
+
+}

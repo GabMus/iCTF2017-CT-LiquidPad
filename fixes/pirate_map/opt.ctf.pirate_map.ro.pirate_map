@@ -1,0 +1,11 @@
+# Last Modified: Tue May 30 14:12:55 2017
+#include <tunables/global>
+
+/opt/ctf/pirate_map/ro/pirate_map flags=(complain) {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  /opt/ctf/pirate_map/ro/pirate_map mr,
+  /opt/ctf/pirate_map/rw/* wr,
+
+}

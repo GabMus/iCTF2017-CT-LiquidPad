@@ -1,0 +1,16 @@
+# Last Modified: Tue Jun  6 17:22:52 2017
+#include <tunables/global>
+
+/opt/ctf/Bl4ckG0ld/ro/Bl4ckG0ld {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  capability dac_override,
+
+  /bin/dash rwix,
+  /opt/ctf/Bl4ckG0ld/ro/ rw,
+  /opt/ctf/Bl4ckG0ld/ro/* rw,
+  /opt/ctf/Bl4ckG0ld/rw/ rw,
+  /opt/ctf/Bl4ckG0ld/rw/* rw,
+
+}

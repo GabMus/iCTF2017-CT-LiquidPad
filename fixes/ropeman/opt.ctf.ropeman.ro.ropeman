@@ -1,0 +1,14 @@
+# Last Modified: Wed May 31 05:10:03 2017
+#include <tunables/global>
+
+/opt/ctf/ropeman/ro/ropeman flags=(complain) {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  /opt/ctf/ropeman/ro/ropeman mr,
+  /opt/ctf/ropeman/ro/wordlists/* r,
+  /opt/ctf/ropeman/rw/ r,
+  /opt/ctf/ropeman/rw/* rw,
+  /opt/ctf/ropeman/rw/old/ r,
+
+}
